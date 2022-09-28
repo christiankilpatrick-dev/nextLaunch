@@ -1,21 +1,34 @@
 <%- include('partials/header') -%>
   <div class="container">
     <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<launches.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <img class="img-fluid" src="<%= launches[i].image%>">
-            <p>Date: <%= launches[i].window_start%></p>
-            <p>Mission: <%= launches[i].mission.name%></p>
-            <p>Rocket: <%= launches[i].rocket.configuration.name%></p>
-            <p>Agency: <%= launches[i].launch_service_provider.name%></p>
-            <p>Location: <%= launches[i].pad.location.name%></p>
-            <p>Countdown: ~~</p>
-
-
-          </li>
-        <% } %>
-        </ul>
+      <% for(var i=0; i<launches.length; i++) {%>
+          <article class="post">
+            <header>
+              <div class="title">
+                <h2><a href="single.html"><%= launches[i].mission.name%></a></h2>
+                <p><%= launches[i].pad.location.name%></p>
+              </div>
+              <div class="meta">
+                <time class="published" datetime="2015-11-01"><%= launches[i].window_start%></time>
+                <a href="#" class="author"><span class="name"><%= launches[i].launch_service_provider.name%></span><img src="images/avatar.jpg" alt="" /></a>
+              </div>
+            </header>
+            <div class="containImage">
+              <a href="single.html" class="image featured"><img id="rockets" src="<%= launches[i].image%>" alt="" /></a>
+            </div>
+            <p><%= launches[i].mission.description%><%= launches[i].status.description%></p>
+            <footer>
+              <ul class="actions">
+                <li><a href="single.html" class="button large">Continue Reading</a></li>
+              </ul>
+              <ul class="stats">
+                <li><a href="#">General</a></li>
+                <li><a href="#" class="icon solid fa-heart">28</a></li>
+                <li><a href="#" class="icon solid fa-comment">128</a></li>
+              </ul>
+            </footer>
+          </article>
+      <% } %>
     </div>
   </div>  
 <%- include('partials/footer') -%>

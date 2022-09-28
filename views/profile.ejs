@@ -13,10 +13,10 @@
               <a href="/post/<%= posts[i]._id%>">
                 <img class="img-fluid" src="<%= posts[i].image%>">
               </a>
-              <p>Countdown: <%= posts[i].createdAt%></p>
-              <p>Mission: <%= posts[i].title%></p>
-              <p>Rocket: <%= posts[i].caption%></p>
-              <p>Agency: <%= posts[i].likes%></p>
+              <p><%= posts[i].createdAt%></p>
+              <p><%= posts[i].title%></p>
+              <p><%= posts[i].caption%></p>
+              <p><%= posts[i].likes%></p>
             </li>
           <% } %>
         </ul>
