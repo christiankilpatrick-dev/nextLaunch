@@ -25,14 +25,12 @@ module.exports = {
 	},
 	getPost: async (req, res) => {
 		try {
-			const post = await Post.findById(req.params.id);
-			const comments = await Comment.find({ post: req.params.id })
-				.sort({ createdAt: 'desc' })
-				.lean();
+			let url = `https://lldev.thespacedevs.com/2.2.0/launch/${req.params.id}`;
+			const data = await fetch(url);
+			const launch = await data.json();
+			console.log(data);
 			res.render('post.ejs', {
-				post: post,
-				user: req.user,
-				comments: comments,
+				launch: launch,
 			});
 		} catch (err) {
 			console.log(err);

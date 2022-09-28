@@ -13,13 +13,12 @@
                 <a href="#" class="author"><span class="name"><%= launches[i].launch_service_provider.name%></span><img src="images/avatar.jpg" alt="" /></a>
               </div>
             </header>
-            <div class="containImage">
-              <a href="single.html" class="image featured"><img id="rockets" src="<%= launches[i].image%>" alt="" /></a>
-            </div>
+            
+            <div class="containImage"><a href="#" class="image featured"><img id="rockets" src="<%= launches[i].image%>" alt="" /></a></div>
             <p><%= launches[i].mission.description%><%= launches[i].status.description%></p>
             <footer>
               <ul class="actions">
-                <li><a href="single.html" class="button large">Continue Reading</a></li>
+                <li><a href="/post/<%= launches[i].id%>" class="button large">Continue Reading</a></li>
               </ul>
               <ul class="stats">
                 <li><a href="#">General</a></li>
