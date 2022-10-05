@@ -7,10 +7,12 @@
               <div class="title">
                 <h2><a href="single.html"><%= launches[i].mission.name%></a></h2>
                 <p><%= launches[i].pad.location.name%></p>
+                <span><%= launches[i].status.name%></span>
               </div>
               <div class="meta">
                 <time class="published" datetime="2015-11-01"><%= launches[i].window_start%></time>
-                <a href="#" class="author"><span class="name"><%= launches[i].launch_service_provider.name%></span><img src="images/avatar.jpg" alt="" /></a>
+                <a href="#" class="author"><span class="name"><%= launches[i].launch_service_provider.name%></span></a>
+                <img id= avatar src="images/avatar.jpg" alt="" />
               </div>
             </header>
             

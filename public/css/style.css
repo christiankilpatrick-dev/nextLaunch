@@ -5,7 +5,17 @@
 div.containImage {
 	max-width: 100px;
 	max-height: 400px;
+	display: block;
 }
-#header {
+#header.container {
 	width: 100%;
 }
+
+article.post {
+	display: inline-block;
+	height: auto;
+}
+
+/* img #avatar {
+	align-self: auto;
+} */

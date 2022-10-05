@@ -14,10 +14,12 @@ module.exports = {
 	},
 	getFeed: async (req, res) => {
 		try {
-			let url = 'https://lldev.thespacedevs.com/2.2.0/launch';
-			const data = await fetch(url);
-			const launches = await data.json();
-			console.log(data);
+			// let launchesUrl = 'https://lldev.thespacedevs.com/2.2.0/launch';
+			const launchData = await fetch(
+				'https://lldev.thespacedevs.com/2.2.0/launch'
+			);
+			const launches = await launchData.json();
+			console.log(launches);
 			res.render('feed.ejs', { launches: launches.results });
 		} catch (err) {
 			console.log(err);
