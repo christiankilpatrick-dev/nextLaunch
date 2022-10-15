@@ -6,18 +6,24 @@
             <header>
               <div class="title">
                 <h2><a href="single.html"><%= launches[i].mission.name%></a></h2>
-                <p><%= launches[i].pad.location.name%></p>
-                <span><%= launches[i].status.name%></span>
               </div>
               <div class="meta">
-                <time class="published" datetime="2015-11-01"><%= launches[i].window_start%></time>
+                
                 <a href="#" class="author"><span class="name"><%= launches[i].launch_service_provider.name%></span></a>
-                <img id= avatar src="images/avatar.jpg" alt="" />
               </div>
             </header>
             
-            <div class="containImage"><a href="#" class="image featured"><img id="rockets" src="<%= launches[i].image%>" alt="" /></a></div>
-            <p><%= launches[i].mission.description%><%= launches[i].status.description%></p>
+            <div class="postBody">
+              <div class='postImage'>
+                <img id="rockets" src="<%= launches[i].image%>" alt="" /></a>
+              </div>
+              <div class = 'postInfo'>
+                <time class="published" datetime="2015-11-01"><%= launches[i].window_start%></time>
+                <p><%= launches[i].pad.location.name%></p>
+                <span ><%= launches[i].status.name%></span>
+                <p ><%= launches[i].mission.description%></p>
+              </div>
+            </div>
             <footer>
               <ul class="actions">
                 <li><a href="/post/<%= launches[i].id%>" class="button large">Continue Reading</a></li>

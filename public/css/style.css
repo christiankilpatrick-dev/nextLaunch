@@ -1,21 +1,21 @@
-/* #rockets {
-	object-fit: fill !important;
-} */
-
-div.containImage {
-	max-width: 100px;
-	max-height: 400px;
-	display: block;
+div.postBody {
+	display: flex;
+	justify-content: center;
+	height: 300px;
 }
-#header.container {
+
+div.postInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+div.postImage {
+	width: 400px;
+	position: relative;
+}
+
+#rockets {
+	position: absolute;
 	width: 100%;
+	object-fit: cover;
 }
-
-article.post {
-	display: inline-block;
-	height: auto;
-}
-
-/* img #avatar {
-	align-self: auto;
-} */
