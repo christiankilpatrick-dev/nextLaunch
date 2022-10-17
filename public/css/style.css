@@ -1,21 +1,52 @@
 div.postBody {
-	display: flex;
-	justify-content: center;
 	height: 300px;
+	display: flex;
+}
+div.postImage {
+	width: 33.333%;
+	position: relative;
+	justify-content: flex-start;
 }
 
 div.postInfo {
 	display: flex;
 	flex-direction: column;
-}
-
-div.postImage {
-	width: 400px;
-	position: relative;
+	justify-content: space-around;
+	align-items: center;
+	justify-self: center;
+	width: 66.666%;
 }
 
 #rockets {
+	display: flex;
 	position: absolute;
 	width: 100%;
 	object-fit: cover;
+	object-position: center;
+	align-self: start;
+	justify-self: flex-start;
+	height: 300px;
+}
+
+article.post {
+	padding: 0px;
+}
+
+aside.sidepanel {
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-left: 40px;
+	margin-top: 3rem;
+}
+div.container {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	max-width: 80%;
+}
+
+h1.missionTitle {
+	margin-bottom: 0;
 }
