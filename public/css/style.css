@@ -1,5 +1,18 @@
+div.container {
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	max-width: 90%;
+	padding-right: 100px;
+}
+
+#header {
+	display: flex;
+}
+
 div.postBody {
-	height: 300px;
+	height: 100%;
 	display: flex;
 }
 div.postImage {
@@ -15,6 +28,27 @@ div.postInfo {
 	align-items: center;
 	justify-self: center;
 	width: 66.666%;
+	margin-top: 20px;
+}
+.eventCard {
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	margin-top: 15px;
+}
+div.eventInfo {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	text-align: center;
+	background-color: rgb(231, 233, 235, 0.8);
+	padding: 0px 5px;
+}
+
+.eventType {
+	align-self: flex-end;
 }
 
 #rockets {
@@ -25,50 +59,46 @@ div.postInfo {
 	object-position: center;
 	align-self: start;
 	justify-self: flex-start;
-	height: 300px;
+	height: 100%;
 }
 
 article.post {
 	padding: 0px;
+	height: 325px;
 }
 
 aside.sidepanel {
-	width: 800px;
+	width: 1000px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	margin-left: 40px;
-	margin-top: 3rem;
+	margin-right: 100px;
+	margin-top: 4rem;
 }
-div.container {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	max-width: 80%;
+
+h1.feed {
+	font-size: x-large;
 }
 
 h1.missionTitle {
 	margin-bottom: 0;
 }
 
-div.eventCard {
-	display: flex;
-	flex-direction: column;
-	max-width: 250px;
-	max-height: fit-content;
-	justify-content: center;
+h3.aside {
+	text-align: center;
 }
 
-#eventImage {
-	display: flex;
-	justify-content: flex-start;
-	width: 100%;
-	object-fit: cover;
-	object-position: center;
-	height: 300px;
-}
-
-h2.aside {
-	display: flex;
-	justify-content: center;
+@media screen and (max-width: 980px) {
+	aside.sidepanel {
+		display: none;
+	}
+	.info {
+		display: flex;
+		align-items: center;
+		text-align: center;
+	}
+	.postInfo {
+		margin-top: 20px;
+		font-size: smaller;
+	}
 }
