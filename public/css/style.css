@@ -50,3 +50,25 @@ div.container {
 h1.missionTitle {
 	margin-bottom: 0;
 }
+
+div.eventCard {
+	display: flex;
+	flex-direction: column;
+	max-width: 250px;
+	max-height: fit-content;
+	justify-content: center;
+}
+
+#eventImage {
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	height: 300px;
+}
+
+h2.aside {
+	display: flex;
+	justify-content: center;
+}

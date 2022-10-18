@@ -1,7 +1,7 @@
 <%- include('partials/header') -%>
   <div class="container">
     <div class="row justify-content-center mt-5">
-      <% for(var i=0; i<launches.length; i++) {%>
+      <% for(let i=0; i<launches.length; i++) {%>
           <article class="post">
             <div class="postBody">
               <div class='postImage'>
@@ -22,10 +22,18 @@
       <% } %>
     </div>
     <aside class="sidepanel">
-      <h2>Space News</h2>
-      <article class="news">article 1</article>
-      <article class="news">article 1</article>
-      <article class="news">article 1</article>
+      <h2 class="aside">Events</h2>
+      <% for(let i=0; i<events.length; i++) {%>
+        <div class="eventCard">
+          <div class='eventImage'>
+            <img id= 'eventImage' class="eventImage" src="<%= events[i].feature_image%>">
+          </div>
+          <div class="eventInfo">
+            <p><%= events[i].name%></p>
+            <span><%= events[i].type.name%></span>
+          </div>
+        </div>
+      <% } %>
     </aside>
   </div>  
 <%- include('partials/footer') -%>

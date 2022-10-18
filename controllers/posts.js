@@ -14,13 +14,20 @@ module.exports = {
 	},
 	getFeed: async (req, res) => {
 		try {
-			// let launchesUrl = 'https://lldev.thespacedevs.com/2.2.0/launch';
+			// get upcoming launches
 			const launchData = await fetch(
 				'https://lldev.thespacedevs.com/2.2.0/launch'
 			);
 			const launches = await launchData.json();
-			console.log(launches);
-			res.render('feed.ejs', { launches: launches.results });
+			// get upcoming events
+			const eventsData = await fetch(
+				'https://lldev.thespacedevs.com/2.2.0/event'
+			);
+			const events = await eventsData.json();
+			res.render('feed.ejs', {
+				launches: launches.results,
+				events: events.results,
+			});
 		} catch (err) {
 			console.log(err);
 		}
