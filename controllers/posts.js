@@ -16,12 +16,12 @@ module.exports = {
 		try {
 			// get upcoming launches
 			const launchData = await fetch(
-				'https://lldev.thespacedevs.com/2.2.0/launch'
+				'https://lldev.thespacedevs.com/2.2.0/launch/upcoming'
 			);
 			const launches = await launchData.json();
 			// get upcoming events
 			const eventsData = await fetch(
-				'https://lldev.thespacedevs.com/2.2.0/event'
+				'https://lldev.thespacedevs.com/2.2.0/event/upcoming'
 			);
 			const events = await eventsData.json();
 			res.render('feed.ejs', {
