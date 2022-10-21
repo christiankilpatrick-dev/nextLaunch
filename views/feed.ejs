@@ -6,7 +6,7 @@
           <article class="post">
             <div class="postBody">
               <div class='postImage'>
-                <img id="rockets" src="<%= launches[i].image%>" alt="" /></a>
+                <img id="rockets"  src="<%= launches[i].image%>" alt="" />
               </div>
               <div class = 'postInfo'>
                 <h1 class="missionTitle info"><a href="single.html"><%= launches[i].mission.name%></a></h1>
@@ -15,7 +15,7 @@
                 <p class="info"><%= launches[i].pad.location.name%></p>
                 <span class="info" ><%= launches[i].status.name%></span>
                 <ul class="actions">
-                  <li><a href="/post/<%= launches[i].id%>" class="button large">Continue Reading</a></li>
+                  <li class="continue"><a href="/post/<%= launches[i].id%>" class="button large">Continue Reading</a></li>
                 </ul>
               </div>
             </div>
@@ -27,8 +27,8 @@
       <% for(let i=0; i<events.length; i++) {%>
         <div class="eventCard" style="background-image: url('<%= events[i].feature_image%>'); background-size: cover; background-position: center; height: 200px; width: 100%;">
           <div class="eventInfo" >
-            <p class="eventName"><%= events[i].name%></p>
-            <span class ='eventType'><%= events[i].type.name%></span>
+            <h4 class="eventName"><%= events[i].name%></h4>
+            <span class ='eventType'><em><%= events[i].type.name%></em></span>
           </div>
         </div>
       <% } %>

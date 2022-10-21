@@ -11,17 +11,17 @@ div.container {
 	display: flex;
 }
 
-div.postBody {
+.postBody {
 	height: 100%;
 	display: flex;
 }
-div.postImage {
+.postImage {
 	width: 33.333%;
 	position: relative;
 	justify-content: flex-start;
 }
 
-div.postInfo {
+.postInfo {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -29,6 +29,7 @@ div.postInfo {
 	justify-self: center;
 	width: 66.666%;
 	margin-top: 20px;
+	font-size: 1.1rem;
 }
 .eventCard {
 	height: 200px;
@@ -37,14 +38,18 @@ div.postInfo {
 	justify-content: flex-end;
 	margin-top: 15px;
 }
-div.eventInfo {
+.eventInfo {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	text-align: center;
 	background-color: rgb(231, 233, 235, 0.8);
-	padding: 0px 5px;
+	padding: 0px 2.5px;
+}
+
+.eventName {
+	margin-bottom: 0;
 }
 
 .eventType {
@@ -60,6 +65,16 @@ div.eventInfo {
 	align-self: start;
 	justify-self: flex-start;
 	height: 100%;
+}
+
+li.loginHeader {
+	margin-left: 25% !important;
+	border-left: none !important;
+}
+
+a.user {
+	font-style: italic;
+	font-weight: bold !important;
 }
 
 article.post {
@@ -82,13 +97,36 @@ h1.feed {
 
 h1.missionTitle {
 	margin-bottom: 0;
+	padding: 0, 10px;
+	text-align: center;
 }
 
 h3.aside {
 	text-align: center;
 }
 
+.imageContainer {
+	height: 500px;
+	width: 300px;
+	position: relative;
+	margin: 0;
+}
+
 @media screen and (max-width: 980px) {
+	div.container {
+		width: 90%;
+		display: flex;
+		justify-items: center;
+		padding: 0;
+		margin: 0, 50px;
+	}
+	div.row {
+		width: 100%;
+	}
+	li.continue {
+		width: 66% !important;
+		margin: auto;
+	}
 	aside.sidepanel {
 		display: none;
 	}
@@ -96,6 +134,9 @@ h3.aside {
 		display: flex;
 		align-items: center;
 		text-align: center;
+	}
+	article.post {
+		max-height: 200px;
 	}
 	.postInfo {
 		margin-top: 20px;
