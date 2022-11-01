@@ -58,6 +58,50 @@ module.exports = {
 			console.log(err);
 		}
 	},
+	getEventsFeed: async (req, res) => {
+		try {
+			// get upcoming events
+			const eventsData = await fetch(
+				'https://lldev.thespacedevs.com/2.2.0/event/upcoming'
+			);
+			const events = await eventsData.json();
+			res.render('eventFeed.ejs', {
+				events: events.results,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	getAgenciesFeed: async (req, res) => {
+		try {
+			// get active agencies
+			const agenciesData = await fetch(
+				'https://lldev.thespacedevs.com/2.2.0/agencies/?featured=true'
+			);
+			const agencies = await agenciesData.json();
+			console.log(agencies);
+			const validAgencies = agencies.results.filter((x) => x.logo_url !== null);
+			console.log(validAgencies);
+			res.render('agenciesFeed.ejs', {
+				agencies: validAgencies,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	getAgency: async (req, res) => {
+		try {
+			let url = `https://lldev.thespacedevs.com/2.2.0/agencies/${req.params.id}`;
+			const data = await fetch(url);
+			const agency = await data.json();
+			console.log(agency);
+			res.render('agency.ejs', {
+				agency: agency,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	},
 	likePost: async (req, res) => {
 		try {
 			await Post.findOneAndUpdate(

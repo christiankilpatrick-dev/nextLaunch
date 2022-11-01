@@ -9,6 +9,8 @@ router.get('/:id', postsController.getPost);
 
 router.get('/event/:id', postsController.getEvent);
 
+router.get('/agency/:id', postsController.getAgency);
+
 router.put('/likePost/:id', postsController.likePost);
 
 router.delete('/deletePost/:id', postsController.deletePost);

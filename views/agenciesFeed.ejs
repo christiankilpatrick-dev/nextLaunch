@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <h1 class="feed">Space Agencies</h1>
+      <% for(let i=0; i<agencies.length; i++) {%>
+          <article class="post">
+            <div class="postBody">
+              <div class='postImage'>
+                <img id="rockets"  src="<%= agencies[i].logo_url%>" alt="" />
+              </div>
+              <div class = 'postInfo'>
+                <h1 class="missionTitle info"><a href="single.html"><%= agencies[i].name%></a></h1>
+                <span class="info" >Year Founded: <%= agencies[i].founding_year%></span>
+                <span class="info" >Agency Type: <%= agencies[i].type%></span>
+                <p class="info"> <%= agencies[i].description%></p>
+                
+                <ul class="actions">
+                  <li class="continue">
+                    <a href="/post/agency/<%= agencies[i].id%>" class="button large">Continue Reading</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+      <% } %>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
