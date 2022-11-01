@@ -9,13 +9,22 @@
                 <img id="rockets"  src="<%= launches[i].image%>" alt="" />
               </div>
               <div class = 'postInfo'>
-                <h1 class="missionTitle info"><a href="single.html"><%= launches[i].mission.name%></a></h1>
-                <a href="#" class="author info"><span class="name info"><%= launches[i].launch_service_provider.name%></span></a>
-                <time class="published info" datetime="2015-11-01"><%= launches[i].window_start%></time>
+                <h1 class="missionTitle info"><a href="single.html"><%= launches[i].name%></a></h1>
+                
+                <a href="#" class="author info">
+                  <span class="name info"><%= launches[i].launch_service_provider.name%></span>
+                </a>
+
+                <time class="published info" datetime="2015-11-01">
+                  <%= moment(launches[i].window_start).format('Do MMMM, YYYY, h:mm:ss a')%>
+                </time>
+
                 <p class="info"><%= launches[i].pad.location.name%></p>
                 <span class="info" ><%= launches[i].status.name%></span>
                 <ul class="actions">
-                  <li class="continue"><a href="/post/<%= launches[i].id%>" class="button large">Continue Reading</a></li>
+                  <li class="continue">
+                    <a href="/post/<%= launches[i].id%>" class="button large">Continue Reading</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -25,12 +34,14 @@
     <aside class="sidepanel">
       <h3 class="aside">Space Events</h3>
       <% for(let i=0; i<events.length; i++) {%>
-        <div class="eventCard" style="background-image: url('<%= events[i].feature_image%>'); background-size: cover; background-position: center; height: 200px; width: 100%;">
-          <div class="eventInfo" >
-            <h4 class="eventName"><%= events[i].name%></h4>
-            <span class ='eventType'><em><%= events[i].type.name%></em></span>
+        <a href="/post/event/<%= events[i].id%>">
+          <div class="eventCard" style="background-image: url('<%= events[i].feature_image%>'); background-size: cover; background-position: center; height: 200px; width: 100%;">
+            <div class="eventInfo" >
+              <h4 class="eventName"><%= events[i].name%></h4>
+              <span class ='eventType'><em><%= events[i].type.name%></em></span>
+            </div>
           </div>
-        </div>
+        </a>
       <% } %>
     </aside>
   </div>  
