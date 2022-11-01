@@ -111,6 +111,9 @@ h3.aside {
 	position: relative;
 	margin: 0;
 }
+.agencyLogo {
+	background-color: rgba(46, 44, 44, 0.567);
+}
 
 @media screen and (max-width: 980px) {
 	div.container {
