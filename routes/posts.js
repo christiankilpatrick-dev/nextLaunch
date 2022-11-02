@@ -13,6 +13,8 @@ router.get('/agency/:id', postsController.getAgency);
 
 router.get('/astronaut/:id', postsController.getAstronaut);
 
+router.get('/station/:id', postsController.getStation);
+
 router.put('/likePost/:id', postsController.likePost);
 
 router.delete('/deletePost/:id', postsController.deletePost);

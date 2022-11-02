@@ -12,11 +12,11 @@ module.exports = {
 			console.log(err);
 		}
 	},
-	getLaunchFeed: async (req, res) => {
+	getLaunches: async (req, res) => {
 		try {
 			// get upcoming launches
 			const launchData = await fetch(
-				'https://lldev.thespacedevs.com/2.2.0/launch/upcoming'
+				'https://lldev.thespacedevs.com/2.2.0/launch/upcoming/'
 			);
 			const launches = await launchData.json();
 			// get upcoming events
@@ -58,7 +58,7 @@ module.exports = {
 			console.log(err);
 		}
 	},
-	getEventsFeed: async (req, res) => {
+	getEvents: async (req, res) => {
 		try {
 			// get upcoming events
 			const eventsData = await fetch(
@@ -72,7 +72,7 @@ module.exports = {
 			console.log(err);
 		}
 	},
-	getAgenciesFeed: async (req, res) => {
+	getAgencies: async (req, res) => {
 		try {
 			// get active agencies
 			const agenciesData = await fetch(
@@ -102,7 +102,7 @@ module.exports = {
 			console.log(err);
 		}
 	},
-	getAstronautsFeed: async (req, res) => {
+	getAstronauts: async (req, res) => {
 		try {
 			// get active astronauts
 			const astronautsData = await fetch(
@@ -126,6 +126,57 @@ module.exports = {
 			console.log(astronaut);
 			res.render('astronaut.ejs', {
 				astronaut: astronaut,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	getSpacecrafts: async (req, res) => {
+		try {
+			// get active spacecrafts
+			const spacecraftsData = await fetch(
+				'https://lldev.thespacedevs.com/2.2.0/spacecraft/?limit=541'
+			);
+			const spacecrafts = await spacecraftsData.json();
+			const valid = spacecrafts.results.reverse().filter(function (el) {
+				if (!this[el.spacecraft_config.image_url]) {
+					this[el.spacecraft_config.image_url] = true;
+					return true;
+				}
+				return false;
+			}, Object.create(null));
+			console.log(valid);
+			res.render('spacecraftsFeed.ejs', {
+				spacecrafts: valid,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	getStations: async (req, res) => {
+		try {
+			// get space stations
+			const stationsData = await fetch(
+				'https://lldev.thespacedevs.com/2.2.0/spacestation/'
+			);
+			const stations = await stationsData.json();
+
+			console.log(stations);
+			res.render('stationsFeed.ejs', {
+				stations: stations.results,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	getStation: async (req, res) => {
+		try {
+			let url = `https://lldev.thespacedevs.com/2.2.0/spacestation/${req.params.id}`;
+			const data = await fetch(url);
+			const station = await data.json();
+			console.log(station);
+			res.render('station.ejs', {
+				station: station,
 			});
 		} catch (err) {
 			console.log(err);

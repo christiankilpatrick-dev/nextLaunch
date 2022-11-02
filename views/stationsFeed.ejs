@@ -1,0 +1,31 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <h1 class="feed">Space Stations</h1>
+      <% for(let i=0; i<stations.length; i++) {%>
+          <article class="post">
+            <div class="postBody">
+              <div class='postImage'>
+                <img id="rockets"  src="<%= stations[i].image_url%>" alt="" />
+              </div>
+              <div class = 'postInfo'>
+                <h1 class="missionTitle info"><a href="single.html"><%= stations[i].name%></a></h1>
+                
+                <time class="published info" datetime="2015-11-01">
+                  Founded : <%= moment(stations[i].founded).format('Do MMMM, YYYY')%>
+                </time>
+
+                <p class="info">Status: <%= stations[i].status.name%></p>
+                <p class="info" >Orbit : <%= stations[i].orbit%></p>
+                <ul class="actions">
+                  <li class="continue">
+                    <a href="/post/station/<%= stations[i].id%>" class="button large">Continue Reading</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+      <% } %>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
