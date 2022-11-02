@@ -1,0 +1,29 @@
+<%- include('partials/header') -%>
+<div class="container">
+	<div class="row justify-content-center mt-5">
+		<div class="col-6">
+			<h2><%= astronaut.name %></h2>
+			<div class="imageContainer">
+				<img id="rockets" class="" src="<%= astronaut.profile_image%>" />
+			</div>
+		</div>
+		<div class="col-3 mt-5">
+			<p class="info">Status : <%= astronaut.status.name%></p>
+			<p class="info">Nationality : <%= astronaut.nationality%></p>
+			<p class="info">Agency: <%= astronaut.agency.name%></p>
+			<p class="info">Total Flights : <%= astronaut.flights_count%></p>
+			<p class="info"><%= astronaut.bio%></p>
+			<ul class="actions">
+				<li class="continue">
+					<a href="<%= astronaut.wiki%>" class="button large">Read More</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="col-6 mt-5">
+			<a class="btn btn-primary" href="/">Return to Feed</a>
+		</div>
+	</div>
+
+	<%- include('partials/footer') -%>
+</div>

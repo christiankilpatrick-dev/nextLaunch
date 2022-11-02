@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <h1 class="feed">Astronauts</h1>
+      <% for(let i=0; i<astronauts.length; i++) {%>
+          <article class="post">
+            <div class="postBody">
+              <div class='postImage'>
+                <img id="rockets"  src="<%= astronauts[i].profile_image%>" alt="" />
+              </div>
+              <div class = 'postInfo'>
+                <h1 class="missionTitle info"><a href="single.html"><%= astronauts[i].name%></a></h1>
+                <p class="info">Status : <%= astronauts[i].status.name%></p>
+                <p class="info">Nationality : <%= astronauts[i].nationality%></p>
+                <p class="info">Agency: <%= astronauts[i].agency.name%></p>
+                <p class="info">Total Flights : <%= astronauts[i].flights_count%></p>
+                <ul class="actions">
+                  <li class="continue">
+                    <a href="/post/astronaut/<%= astronauts[i].id%>" class="button large">Continue Reading</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+      <% } %>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>

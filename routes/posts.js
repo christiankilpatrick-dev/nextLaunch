@@ -5,11 +5,13 @@ const postsController = require('../controllers/posts');
 const { ensureAuth, ensureGuest } = require('../middleware/auth');
 
 //Post Routes - simplified for now
-router.get('/:id', postsController.getPost);
+router.get('/:id', postsController.getLaunch);
 
 router.get('/event/:id', postsController.getEvent);
 
 router.get('/agency/:id', postsController.getAgency);
+
+router.get('/astronaut/:id', postsController.getAstronaut);
 
 router.put('/likePost/:id', postsController.likePost);
 

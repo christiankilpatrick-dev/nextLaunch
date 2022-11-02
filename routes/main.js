@@ -6,10 +6,11 @@ const postsController = require('../controllers/posts');
 const { ensureAuth, ensureGuest } = require('../middleware/auth');
 
 //Main Routes - simplified for now
-router.get('/', postsController.getFeed);
+router.get('/', postsController.getLaunchFeed);
 router.get('/profile', postsController.getProfile);
 router.get('/events', postsController.getEventsFeed);
 router.get('/agencies', postsController.getAgenciesFeed);
+router.get('/astronauts', postsController.getAstronautsFeed);
 router.get('/login', authController.getLogin);
 router.post('/login', authController.postLogin);
 router.get('/logout', authController.logout);

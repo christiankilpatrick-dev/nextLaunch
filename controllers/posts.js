@@ -12,7 +12,7 @@ module.exports = {
 			console.log(err);
 		}
 	},
-	getFeed: async (req, res) => {
+	getLaunchFeed: async (req, res) => {
 		try {
 			// get upcoming launches
 			const launchData = await fetch(
@@ -24,7 +24,7 @@ module.exports = {
 				'https://lldev.thespacedevs.com/2.2.0/event/upcoming'
 			);
 			const events = await eventsData.json();
-			res.render('feed.ejs', {
+			res.render('launchFeed.ejs', {
 				launches: launches.results,
 				events: events.results,
 			});
@@ -32,13 +32,13 @@ module.exports = {
 			console.log(err);
 		}
 	},
-	getPost: async (req, res) => {
+	getLaunch: async (req, res) => {
 		try {
 			let url = `https://lldev.thespacedevs.com/2.2.0/launch/${req.params.id}`;
 			const data = await fetch(url);
 			const launch = await data.json();
 			console.log(data);
-			res.render('post.ejs', {
+			res.render('launch.ejs', {
 				launch: launch,
 			});
 		} catch (err) {
@@ -97,6 +97,35 @@ module.exports = {
 			console.log(agency);
 			res.render('agency.ejs', {
 				agency: agency,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	getAstronautsFeed: async (req, res) => {
+		try {
+			// get active astronauts
+			const astronautsData = await fetch(
+				'https://lldev.thespacedevs.com/2.2.0/astronaut/'
+			);
+			const astronauts = await astronautsData.json();
+
+			console.log(astronauts);
+			res.render('astronautsFeed.ejs', {
+				astronauts: astronauts.results,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	getAstronaut: async (req, res) => {
+		try {
+			let url = `https://lldev.thespacedevs.com/2.2.0/astronaut/${req.params.id}`;
+			const data = await fetch(url);
+			const astronaut = await data.json();
+			console.log(astronaut);
+			res.render('astronaut.ejs', {
+				astronaut: astronaut,
 			});
 		} catch (err) {
 			console.log(err);

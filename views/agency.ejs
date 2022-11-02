@@ -1,37 +1,29 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= agency.name %></h2>
-      <div class = 'imageContainer'>
-        <img id = 'rockets' class="" src="<%= agency.logo_url%>" />
-      </div>
-      
-      <div class="row justify-content-between">
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="col-3">Likes: <%= 3 %></h3>
-      </div>
-    </div>
-    <div class="col-3 mt-5">
-      <p><%= agency.abbrev%></p>
-      <p><%= agency.country_code%></p>
-      <p>Successful Launches: <%= agency.successful_launches%></p>
-      <ul class="actions">
-        <li class="continue">
-          <a href="<%= agency.info_url%>" class="button large">Continue Reading</a>
-        </li>
-    </ul>
-    </div>
-    <div class="mt-5">
-        <h2>Add a comment</h2>
+	<div class="row justify-content-center mt-5">
+		<div class="col-6">
+			<h2><%= agency.name %></h2>
+			<div class="imageContainer">
+				<img id="rockets" class="" src="<%= agency.logo_url%>" />
+			</div>
+		</div>
+		<div class="col-3 mt-5">
+			<p><%= agency.abbrev%></p>
+			<p><%= agency.country_code%></p>
+			<p>Successful Launches: <%= agency.successful_launches%></p>
+			<ul class="actions">
+				<li class="continue">
+					<a href="<%= agency.info_url%>" class="button large"
+						>Continue Reading</a
+					>
+				</li>
+			</ul>
+		</div>
 
-   
-      
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/">Return to Feed</a>
-    </div>
-  </div>
+		<div class="col-6 mt-5">
+			<a class="btn btn-primary" href="/">Return to Feed</a>
+		</div>
+	</div>
 </div>
 
 <%- include('partials/footer') -%>
