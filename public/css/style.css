@@ -5,6 +5,7 @@ div.container {
 	justify-content: space-around;
 	max-width: 90%;
 	padding-right: 100px;
+	margin-left: 1rem;
 }
 
 #header {
@@ -32,7 +33,7 @@ div.container {
 	font-size: 1.1rem;
 }
 .eventCard {
-	height: 200px;
+	height: 170px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -47,6 +48,9 @@ div.container {
 	background-color: rgb(231, 233, 235, 0.8);
 	padding: 0px 2.5px;
 }
+p.info {
+	max-width: 90%;
+}
 
 .eventName {
 	margin-bottom: 0;
@@ -54,6 +58,14 @@ div.container {
 
 .eventType {
 	align-self: flex-end;
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: center;
+}
+#likeButton {
+	width: 100px;
 }
 
 #rockets {
@@ -68,7 +80,7 @@ div.container {
 }
 
 li.loginHeader {
-	margin-left: 25% !important;
+	margin-left: 20% !important;
 	border-left: none !important;
 }
 
@@ -83,12 +95,15 @@ article.post {
 }
 
 aside.sidepanel {
-	width: 1000px;
+	width: 17%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	margin-right: 100px;
+	margin-right: 70px;
 	margin-top: 4rem;
+}
+#launchFeed {
+	width: 70%;
 }
 
 h1.feed {

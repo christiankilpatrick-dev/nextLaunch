@@ -17,7 +17,7 @@
                   <%= moment(events[i].date).format('Do MMMM, YYYY, h:mm:ss a')%>
                 </time>
 
-                <p class="info"><%= events[i].description%></p>
+                <p class="info"><%= events[i].description.substring(0, 150)%></p>
                 <span class="info" >Event Type : <%= events[i].type.name%></span>
                 <ul class="actions">
                   <li class="continue">

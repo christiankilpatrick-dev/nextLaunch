@@ -1,30 +1,31 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= launch.name %></h2>
-      <div class = 'imageContainer'>
-        <img id = 'rockets' class="" src="<%= launch.image%>" />
-      </div>
-      
-      <div class="row justify-content-between">
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="col-3">Likes: <%= 3 %></h3>
-      </div>
-    </div>
-    <div class="col-3 mt-5">
-      <p><%= launch.description %></p>
-      <p><%= launch.launch_service_provider.description %></p>
+	<div class="row justify-content-center mt-5">
+		<div class="col-6">
+			<h2><%= launch.name %></h2>
+			<div class="imageContainer">
+				<img id="rockets" class="" src="<%= launch.image%>" />
+			</div>
 
-    </div>
-    <div class="mt-5">
-      <h2>Add a comment</h2>
-      
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/">Return to Feed</a>
-    </div>
-  </div>
+			<div class="row justify-content-between">
+				<button
+					id="likeButton"
+					class="btn btn-primary fa fa-heart"
+					type="submit"
+				></button>
+			</div>
+		</div>
+		<div class="col-3 mt-5">
+			<p><%= launch.description %></p>
+			<p><%= launch.launch_service_provider.description %></p>
+		</div>
+		<div class="mt-5">
+			<h2>Add a comment</h2>
+		</div>
+		<div class="buttonContainer">
+			<a class="feedReturn btn btn-primary" href="/">Return to Feed</a>
+		</div>
+	</div>
+
+	<%- include('partials/footer') -%>
 </div>
-
-<%- include('partials/footer') -%>

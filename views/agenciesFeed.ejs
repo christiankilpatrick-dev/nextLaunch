@@ -10,9 +10,9 @@
               </div>
               <div class = 'postInfo'>
                 <h1 class="missionTitle info"><a href="single.html"><%= agencies[i].name%></a></h1>
-                <span class="info" >Year Founded: <%= agencies[i].founding_year%></span>
-                <span class="info" >Agency Type: <%= agencies[i].type%></span>
-                <p class="info"> <%= agencies[i].description%></p>
+                <p class="info" >Year Founded: <%= agencies[i].founding_year%></p>
+                <p class="info" >Agency Type: <%= agencies[i].type%></p>
+                <p class="info"> <%= agencies[i].description.substring(0, 200)%> ...</p>
                 
                 <ul class="actions">
                   <li class="continue">
