@@ -9,7 +9,7 @@
                 <img id="rockets"  src="<%= launches[i].image%>" alt="" />
               </div>
               <div class = 'postInfo'>
-                <h1 class="missionTitle info"><a href="single.html"><%= launches[i].name%></a></h1>
+                <h1 class="missionTitle info"><a href="/post/<%= launches[i].id%>"><%= launches[i].name%></a></h1>
                 
                 <a href="#" class="author info">
                   <span class="name info"><%= launches[i].launch_service_provider.name%></span>
